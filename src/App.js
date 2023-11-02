@@ -1,9 +1,10 @@
 import { AppHeader } from '@corva/ui/components';
 
 import { DEFAULT_SETTINGS } from './constants';
-import logo from './assets/logo.svg';
 
-import styles from './App.css';
+import { useStyles } from './styles'; // Import useStyles
+import Logo from './assets/logo.svg';
+import useWitsData from './hooks/useWitsDataWithSubscription';
 
 /**
  * @param {Object} props
@@ -15,17 +16,18 @@ function App({
   isExampleCheckboxChecked = DEFAULT_SETTINGS.isExampleCheckboxChecked,
   appHeaderProps,
 }) {
+  const classes = useStyles(); // Use useStyles
+  const assetId = 43775702;
+  const { loading, witsData } = useWitsData({ assetId });
+
+  console.log('loading', loading);
+  console.log('witsData', witsData);
+
   return (
-    <div className={styles.container}>
-      <AppHeader {...appHeaderProps} />
-      <div className={styles.content}>
+    <div className={classes.container}>
+      <AppHeader {...appHeaderProps} logoSrc={Logo} />
+      <div className={classes.content}>
         <div>
-          <img src={logo} alt="logo" className={styles.logo} />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-            <br />
-            <br />
-          </p>
           <a
             className="App-link"
             href="https://reactjs.org"
