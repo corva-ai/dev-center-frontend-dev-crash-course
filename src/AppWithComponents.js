@@ -1,7 +1,7 @@
 import Main from './components/pages/Main';
 
 function App(props) {
-  console.log('App props', props);
+  console.log('App props: ', props);
   const { appHeaderProps, coordinates, currentUser, wells } = props;
   const companyId = currentUser?.company_id;
   return (
