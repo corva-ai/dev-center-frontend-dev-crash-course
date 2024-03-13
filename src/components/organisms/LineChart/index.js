@@ -66,7 +66,7 @@ export default function LineChart({
 
   const onZoomChangeCallback = e => {
     // Check values of event and trigger actions if needed
-    console.log('e', e);
+    console.log('Zoom event: ', e);
   };
 
   if (!options.series.length) return null;

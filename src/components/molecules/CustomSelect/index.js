@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { MenuItem } from '@material-ui/core';
 import { Select } from '@corva/ui/components';
-
 export default function CustomSelect({
   FormControlProps,
   formHelperText,
